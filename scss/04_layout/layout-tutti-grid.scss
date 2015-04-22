@@ -219,43 +219,14 @@ p.markup	{
 	display: none;
 }
 
-@include size-xs-only {
-	.size-xs-only	{
-		display: block !important;
-	}
-}
-@include size-sm-up {
-	.size-sm-up	{
-		display: block !important;
-	}	
-}
-@include size-sm-only {
-	.size-sm-only	{
-		display: block !important;
-	}	
-}
-@include size-md-up {
-	.size-md-up	{
-		display: block !important;
-	}	
-}
-@include size-md-only {
-	.size-md-only	{
-		display: block !important;
-	}	
-}
-@include size-lg-up {
-	.size-lg-up	{
-		display: block !important;
-	}	
-}
-@include size-lg-only {
-	.size-lg-only	{
-		display: block !important;
-	}	
-}
-@include size-xl-only {
-	.size-xl-only	{
-		display: block !important;
-	}	
+
+.what-grid	{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 10px 0;
+	z-index: 99;
+	background: rgba(0,0,0,0.5);
+	color: white;
 }

@@ -49,12 +49,13 @@ $width-80: 80%;
 		content: "";
 		display: table;
 		clear: both;
-		}
 	}
+}
 
 [class*='col-'] {
 	float: left;
-	padding: 0 ($gutter / 2);
+	padding-left: ($gutter / 2);
+	padding-right: ($gutter / 2);
 	position: relative;
 }
 
@@ -86,7 +87,12 @@ $width-80: 80%;
 
 .grid {
 	width: $grid-sm;
-	}
+}
+
+[class*='col-'] {
+	padding-left: ($gutter-sm / 2);
+	padding-right: ($gutter-sm / 2);
+}
 
 
 [class*='-sm-1c']	{width: $width-1; }
@@ -117,9 +123,12 @@ $width-80: 80%;
 
 .grid {
 	width: $grid-md;
-	}
+}
 
-
+[class*='col-'] {
+	padding-left: ($gutter-md / 2);
+	padding-right: ($gutter-md / 2);
+}
 
 
 [class*='-md-1c']	{width: $width-1; }
@@ -151,8 +160,12 @@ $width-80: 80%;
 
 .grid {
 	width: $grid-lg;
-	}
+}
 
+[class*='col-'] {
+	padding-left: ($gutter-lg / 2);
+	padding-right: ($gutter-lg / 2);
+}
 
 [class*='-lg-1c']	{width: $width-1; }
 [class*='-lg-2c']	{width: $width-2; }
@@ -184,7 +197,11 @@ $width-80: 80%;
 	.grid {
 		width: $grid-xl;
 	}
-	
+
+[class*='col-'] {
+	padding-left: ($gutter-xl / 2);
+	padding-right: ($gutter-xl / 2);
+}	
 	
 [class*='-xl-1c']	{width: $width-1; }
 [class*='-xl-2c']	{width: $width-2; }
@@ -216,14 +233,16 @@ $width-80: 80%;
 /* GUTTER ADJUSTEMENT */
 
 [class*='grid'].no-gutter [class*='col-']	{
-	padding: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 /* GRID XS NO-GUTTER */
 
 .grid.no-gutter {
 	width: 100%;
-	padding: 0 $gutter/2;
+	padding-left: (($gutter/2) + $xs-border-spacing);
+	padding-right: (($gutter/2) + $xs-border-spacing);
 }
 
 
@@ -231,8 +250,9 @@ $width-80: 80%;
 
 @media only screen and (min-width: $grid-sm)	{
 	.grid.no-gutter {
-		width: $grid-sm - $gutter;
-		padding: 0;
+		width: $grid-sm - $gutter-sm;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
@@ -241,7 +261,7 @@ $width-80: 80%;
 
 @media only screen and (min-width: $grid-md + ($breakpoint-space))	{
 	.grid.no-gutter {
-		width: $grid-md - $gutter;
+		width: $grid-md - $gutter-md;
 	}
 }
 
@@ -250,7 +270,7 @@ $width-80: 80%;
 
 @media only screen and (min-width: $grid-lg + ($breakpoint-space))	{
 	.grid.no-gutter {
-		width: $grid-lg - $gutter;
+		width: $grid-lg - $gutter-lg;
 	}
 }
 
@@ -259,7 +279,7 @@ $width-80: 80%;
 
 @media only screen and (min-width: $grid-xl + ($breakpoint-space))	{
 	.grid.no-gutter {
-		width: $grid-xl - $gutter;
+		width: $grid-xl - $gutter-xl;
 	}
 }
 
@@ -270,7 +290,8 @@ $width-80: 80%;
 
 .grid-fluid {
 	width: 100%;
-	padding: 0;
+	padding-left: 0;
+	padding-right: 0;
 
 	&:after	{
 		content: "";
@@ -279,24 +300,47 @@ $width-80: 80%;
 	}
 }
 
+// GRID FLUID GRID WIDTH
 .grid-fluid.grid-width	{
-	max-width: $grid-xl + $gutter;
+	max-width: $grid-xl;
 	margin: 0 auto;
 }
 
+// GRID FLUID GRID WIDTH NO GUTTER
 .grid-fluid.grid-width.no-gutter	{
-	padding: 0 ($gutter / 2);
+	padding-left: $gutter/2;
+	padding-right: $gutter/2;
 }
 
 
 @media only screen and (min-width: $grid-sm)	{
-	.grid-fluid {
-		padding: 0 ($gutter / 2);
-	}
 	.grid-fluid.grid-width.no-gutter	{
-		padding: 0 $gutter;
+		padding-left: $gutter-sm/2;
+		padding-right: $gutter-sm/2;
 	}
 }
+
+@media only screen and (min-width: $grid-md + ($breakpoint-space))	{
+	.grid-fluid.grid-width.no-gutter	{
+		padding-left: $gutter-md/2;
+		padding-right: $gutter-md/2;
+	}
+}
+
+@media only screen and (min-width: $grid-lg + ($breakpoint-space))	{
+	.grid-fluid.grid-width.no-gutter	{
+		padding-left: $gutter-lg/2;
+		padding-right: $gutter-lg/2;
+	}
+}
+
+@media only screen and (min-width: $grid-xl + ($breakpoint-space))	{
+	.grid-fluid.grid-width.no-gutter	{
+		padding-left: $gutter-xl/2;
+		padding-right: $gutter-xl/2;
+	}
+}
+
 
 
 
@@ -307,7 +351,8 @@ $width-80: 80%;
 
 
 .grid-fluid.no-gutter {
-	padding: 0;	  
+	padding-left: 0;	  
+	padding-right: 0;	  
 }
 
 
@@ -330,7 +375,7 @@ $width-80: 80%;
 
 [class*='grid'] [class*='col-']:only-child, .grid [class*='col-'].center	{
 	overflow: visible;
-	}
+}
 	
 
 
@@ -352,19 +397,99 @@ $width-80: 80%;
 	margin: 0 (-$gutter/2);
 	width: auto;
 	[class*='col-']	{
-		padding: 0 $gutter/2;
+		padding-left: $gutter/2;
+		padding-right: $gutter/2;
 	}
 }
 
 [class*='grid'] [class*='grid'].no-gutter	{
 	margin: 0;
 	width: auto;
-	padding: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 [class*='grid'] [class*='grid'] [class*='grid'].no-gutter	{
 	margin: 0;
 	[class*='col-']	{
-		padding: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+@media only screen and (min-width: $grid-sm)	{
+	[class*='grid'] [class*='grid']	{
+		margin: 0 (-$gutter-sm/2);
+	}
+	[class*='grid'] [class*='grid'].gutter, 
+	[class*='grid'] [class*='grid'].gutter [class*='grid']	{
+		margin: 0 (-$gutter-sm/2);
+		[class*='col-']	{
+			padding-left: $gutter-sm/2;
+			padding-right: $gutter-sm/2;
+		}
+	}
+}
+
+@media only screen and (min-width: $grid-md + ($breakpoint-space))	{
+	[class*='grid'] [class*='grid']	{
+		margin: 0 (-$gutter-md/2);
+	}
+	[class*='grid'] [class*='grid'].gutter, 
+	[class*='grid'] [class*='grid'].gutter [class*='grid']	{
+		margin: 0 (-$gutter-md/2);
+		[class*='col-']	{
+			padding-left: $gutter-md/2;
+			padding-right: $gutter-md/2;
+		}
+	}
+}
+
+@media only screen and (min-width: $grid-lg + ($breakpoint-space))	{
+	[class*='grid'] [class*='grid']	{
+		margin: 0 (-$gutter-lg/2);
+	}
+	[class*='grid'] [class*='grid'].gutter, 
+	[class*='grid'] [class*='grid'].gutter [class*='grid']	{
+		margin: 0 (-$gutter-lg/2);
+		[class*='col-']	{
+			padding-left: $gutter-lg/2;
+			padding-right: $gutter-lg/2;
+		}
+	}
+}
+
+@media only screen and (min-width: $grid-xl + ($breakpoint-space))	{
+	[class*='grid'] [class*='grid']	{
+		margin: 0 (-$gutter-xl/2);
+	}
+	[class*='grid'] [class*='grid'].gutter, 
+	[class*='grid'] [class*='grid'].gutter [class*='grid']	{
+		margin: 0 (-$gutter-xl/2);
+		[class*='col-']	{
+			padding-left: $gutter-xl/2;
+			padding-right: $gutter-xl/2;
+		}
+	}
+}
+
+
+/* =============================================
+   BORDER SPACING FOR SIZE XS
+   ============================================= */
+
+@media only screen and (max-width: ($grid-sm - 1px))	{
+	[class*='grid']	{
+		padding-left: $xs-border-spacing;
+		padding-right: $xs-border-spacing;
+		[class*='grid']	{
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	.grid-fluid	{
+		padding-left: $xs-border-spacing;
+		padding-right: $xs-border-spacing;
 	}
 }
 

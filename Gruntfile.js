@@ -29,6 +29,15 @@ module.exports = function(grunt) {
           }
         }
     },
+    combine_mq: {
+      new_filename: {
+          options: {
+                  beautify: false
+          },
+        src: 'css/main.min.css',
+        dest: 'css/main.min.css'
+      }
+    },
     concat: {
       options: {
         separator: ';',
@@ -65,7 +74,7 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask('default', [
-    'build'
+    'dev'
   ]);
   grunt.registerTask('dev', [
     'sass:dev',
@@ -73,6 +82,7 @@ module.exports = function(grunt) {
   ]);
   grunt.registerTask('build', [
     'sass:build',
+    'combine_mq',
     'uglify'
   ]);
 };

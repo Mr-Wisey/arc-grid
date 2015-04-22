@@ -2,7 +2,7 @@
    FIXING FLOATING ISSUE, SEE http://www.bluthemes.com/blog/3/clearing-bootstrap-3-columns 
    ============================================= */
 
-@media only screen and (max-width: $grid-sm)	{
+@include size-xs-only {
 [class*='clear'][class*='-xs12'] [class*='col-']:nth-child(12n+13) {clear: left;}
 [class*='clear'][class*='-xs6'] [class*='col-']:nth-child(6n+7) {clear: left;}
 [class*='clear'][class*='-xs5'] [class*='col-']:nth-child(5n+6) {clear: left;}
@@ -11,7 +11,7 @@
 [class*='clear'][class*='-xs2'] [class*='col-']:nth-child(2n+3) {clear: left;}
 }
 
-@media only screen and (min-width: $grid-sm) and (max-width: $grid-md + ($breakpoint-space))	{
+@include size-sm-only {
 	[class*='clear'][class*='-sm12'] [class*='col-']:nth-child(12n+13) {clear: left;}
 	[class*='clear'][class*='-sm6'] [class*='col-']:nth-child(6n+7) {clear: left;}
 	[class*='clear'][class*='-sm5'] [class*='col-']:nth-child(5n+6) {clear: left;}
@@ -20,7 +20,7 @@
 	[class*='clear'][class*='-sm2'] [class*='col-']:nth-child(2n+3) {clear: left;}
 }
 
-@media only screen and (min-width: $grid-md + ($breakpoint-space)) and (max-width: $grid-lg + ($breakpoint-space))	{
+@include size-md-only {
 	[class*='clear'][class*='-md12'] [class*='col-']:nth-child(12n+13) {clear: left;}
 	[class*='clear'][class*='-md6'] [class*='col-']:nth-child(6n+7) {clear: left;}
 	[class*='clear'][class*='-md5'] [class*='col-']:nth-child(5n+6) {clear: left;}
@@ -29,7 +29,7 @@
 	[class*='clear'][class*='-md2'] [class*='col-']:nth-child(2n+3) {clear: left;}
 }
 
-@media only screen and (min-width: $grid-lg + ($breakpoint-space)) and (max-width: $grid-xl + ($breakpoint-space))	{
+@include size-lg-only {
 	[class*='clear'][class*='-lg12'] [class*='col-']:nth-child(12n+13) {clear: left;}
 	[class*='clear'][class*='-lg6'] [class*='col-']:nth-child(6n+7) {clear: left;}
 	[class*='clear'][class*='-lg5'] [class*='col-']:nth-child(5n+6) {clear: left;}
@@ -38,7 +38,7 @@
 	[class*='clear'][class*='-lg2'] [class*='col-']:nth-child(2n+3) {clear: left;}
 }
 
-@media only screen and (min-width: $grid-xl + ($breakpoint-space))	{
+@include size-xl-only {
 	[class*='clear'][class*='-xl12'] [class*='col-']:nth-child(12n+13) {clear: left;}
 	[class*='clear'][class*='-xl6'] [class*='col-']:nth-child(6n+7) {clear: left;}
 	[class*='clear'][class*='-xl5'] [class*='col-']:nth-child(5n+6) {clear: left;}
