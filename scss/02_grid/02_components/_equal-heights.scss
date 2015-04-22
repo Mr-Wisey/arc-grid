@@ -1,0 +1,28 @@
+/* =============================================
+   EQUAL HEIGHTS
+   ============================================= */
+
+[class*='grid'].equal   {
+   overflow: hidden;
+   }
+
+[class*='grid'].equal [class*='col-'] {
+   padding-bottom: 1000%;
+   margin-bottom: -1000%;
+   }
+
+@media only screen and (max-width: $grid-m + ($breakpoint-space)) {
+   [class*='grid'].equal [class*='col-'] {
+      padding-bottom: auto;
+      margin-bottom: auto;
+   }
+}
+
+
+@media only screen and (max-width: $grid-s + ($breakpoint-space/2))  {
+   [class*='grid'].equal [class*='col-'] {
+      padding-bottom: auto;
+      margin-bottom: auto;
+   }
+}
+

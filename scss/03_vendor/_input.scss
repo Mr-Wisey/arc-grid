@@ -1,0 +1,107 @@
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input::-ms-input-placeholder,
+textarea::-moz-placeholder,
+textarea::-webkit-input-placeholder {
+	color: lighten($dark-grey, 20%);
+    opacity: 1;
+}
+
+
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button	{
+	margin: 0;
+}
+
+
+
+input	{
+	-webkit-box-sizing: border-box !important;
+	outline: none;
+	border: none;
+	font: inherit !important;
+	color: inherit !important;
+	letter-spacing: inherit !important;
+	word-spacing: inherit !important;
+	text-transform: inherit !important;
+	text-indent: inherit !important;
+	text-shadow: inherit !important;
+	display: inherit !important;
+	padding: 0px;
+	text-align: inherit !important;
+	cursor: auto;
+	-moz-use-text-color: inherit !important;
+	&.error	{
+		background: red;
+	}
+}
+
+input[type="date"]	{
+	align-items: center;
+	display: block;
+	font-family: inherit;
+	overflow: hidden;
+	padding: 0px;
+	-webkit-padding-start: 0px;
+	-webkit-user-select: date !important;
+}
+
+textarea	{
+	color: inherit !important;
+	font: inherit !important;
+	outline: none;
+	border: none;
+	-moz-use-text-color: inherit !important;
+    margin: 0;
+    padding: 0;
+}
+
+input	{
+-webkit-text-fill-color: inherit !important;
+border-bottom-left-radius: inherit !important;
+border-bottom-right-radius: inherit !important;
+border-top-left-radius: inherit !important;
+border-top-right-radius: inherit !important;
+}
+
+/* =============================================
+   INPUT ERROR 
+   ============================================= */
+
+.invalid 	{
+	input:required:invalid, textarea:required:invalid {
+	box-shadow: 0 0 1.5px 1px red;
+	}
+}
+
+::-webkit-validation-bubble {}
+::-webkit-validation-bubble-message {}
+::-webkit-validation-bubble-arrow {}
+::-webkit-validation-bubble-arrow-clipper {}
+
+/* =============================================
+   CUSTOM
+   ============================================= */
+
+input, textarea	{
+	padding: 0 10px 0;
+}
+
+textarea	{
+	padding-top: 10px;
+}
+
+input	{
+	&[type='text'], &[type='tel'], &[type='email']	{
+	width: 100%;
+	background: $white;
+	height: $form-height;
+	line-height: $form-height;
+	margin-bottom: 10px;
+	}
+}
+
+textarea	{
+	width: 100%;
+	background: $grey;
+	height: 128px;
+}
