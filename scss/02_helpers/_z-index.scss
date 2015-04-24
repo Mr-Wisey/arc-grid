@@ -1,0 +1,21 @@
+$zindex-positions: (
+	slider-top : 2,
+	home-header : 0,
+	lang-switch : 2,
+	share-opener : 3,
+	share-buttons : 2,
+	lang-opener : 3,
+	header-nav : 11,
+	video : 99
+);
+
+@mixin z-index($z-index) {
+  z-index: map-get($zindex-positions, $z-index);
+};
+
+// USE
+/*
+header {
+  @include z-index('header');
+}
+*/

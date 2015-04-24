@@ -1,0 +1,6 @@
+
+
+// DISABLE HOVER ON TOUCH DEVICES WITH MODERNIZR DETECTION
+html.touch .js-hover:hover {
+    pointer-events: none !important;
+}

@@ -1,17 +1,37 @@
-/*
-// Modules and Variables
-@import "layout/variables";
-*/
+// VENDORS –> NEVER EVER MODIFY THESE FILES
+@import 
+   '01_vendors/01_reset/reset_basic', // DO NOT MODIFY
+   '01_vendors/02_grid/grid-main'; // DO NOT MODIFY
 
-// Reset
-@import "01_reset/reset_basic";
-@import "01_reset/reset_extras";
-// ...
-
-
-// Grid
-@import "02_grid/grid-main";
-// ...
+// HELPERS
+@import 
+   '02_helpers/placeholders',
+   '02_helpers/z-index';
 
 
-@import "04_layout/layout-tutti-grid";
+// BASE
+@import 
+   '03_base/colors',
+   '03_base/reset_extras', // MODIFICATION ALLOWED
+   '03_base/basics',
+   '03_base/typography';
+
+// LAYOUT
+   @import 
+  '04_layout/layout-tutti-grid';
+
+// COMPONENTS
+@import 
+   '05_components/c-xxx';
+
+// MICRO COMPONENTS
+   @import 
+   '06_micro-components/mc-xxx';
+
+// NANO COMPONENTS
+   @import 
+   '07_nano-components/nc-xxx';
+
+// TEMPORARY
+   @import 
+   'temp';

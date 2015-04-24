@@ -1,0 +1,270 @@
+/* =========================================================
+    WEBFONTS
+    ========================================================= */
+
+
+
+@font-face {
+    font-family: HelveticaNeue_Light;
+    src: url(../fonts/helveticaneue-light.eot);
+    src: url(../fonts/helveticaneue-light.eot?#iefix) format('embedded-opentype'), url(../fonts/helveticaneue-light.woff) format('woff'), url(../fonts/helveticaneue-light.ttf) format('truetype'), url(../fonts/helveticaneue-light.svg#HelveticaNeue_Light) format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: HelveticaNeue_Normal;
+    src: url(../fonts/helveticaneue-roman.eot);
+    src: url(../fonts/helveticaneue-roman.eot?#iefix) format('embedded-opentype'), url(../fonts/helveticaneue-roman.woff) format('woff'), url(../fonts/helveticaneue-roman.ttf) format('truetype'), url(../fonts/helveticaneue-roman.svg#HelveticaNeue_Normal) format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: HelveticaNeue_Medium;
+    src: url(../fonts/helveticaneue-medium.eot);
+    src: url(../fonts/helveticaneue-medium.eot?#iefix) format('embedded-opentype'), url(../fonts/helveticaneue-medium.woff) format('woff'), url(../fonts/helveticaneue-medium.ttf) format('truetype'), url(../fonts/helveticaneue-medium.svg#HelveticaNeue_Medium) format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+/* =============================================
+   FONT-FAMILY 
+   ============================================= */
+
+
+@mixin helvetica-light  {
+    font-family: "HelveticaNeue_Light", Helvetica, sans-serif;
+    font-weight: light;
+}
+
+@mixin helvetica-normal  {
+    font-family: "HelveticaNeue_Normal", Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+@mixin helvetica-medium  {
+    font-family: "HelveticaNeue_Medium", Helvetica, sans-serif;
+    font-weight: medium;
+}
+
+
+/* =============================================
+   FONT-SIZE 
+   ============================================= */
+
+$base-font-size: 17px;
+
+
+
+@mixin font-size-basic  {
+    font-size: $base-font-size / 100 * 90;
+    line-height: 164%;
+    @include size-sm-up    {
+        font-size: $base-font-size / 100 * 97;
+    }
+    @include size-md-up    {
+        font-size: $base-font-size;
+    }
+}
+
+@mixin font-size-xxs    {
+    font-size: 70%;
+    line-height: 120%;
+}
+
+@mixin font-size-xs {
+    font-size: 75%;
+    line-height: 155%;
+}
+
+
+
+
+
+@mixin font-size-s  {
+    font-size: 107%;
+}
+
+@mixin font-size-m  {
+    font-size: 107%;
+    line-height: 170%;
+    @include size-sm-up {
+        font-size: 114%;
+    }
+    @include size-md-up {
+        font-size: 120%;
+    }
+    @include size-lg-up {
+        font-size: 135%;
+    }
+    @include size-xl-only {
+        font-size: 150%;
+    }
+}
+@mixin font-size-m2  {
+    font-size: 115%;
+    line-height: 150%;
+    @include size-sm-up {
+        font-size: 120%;
+    }
+    @include size-md-up {
+        font-size: 125%;
+    }
+    @include size-lg-up {
+        font-size: 130%;
+    }
+    @include size-xl-only {
+        font-size: 135%;
+    }
+}
+
+@mixin font-size-l  {
+    font-size: 145%;
+    line-height: 120%;
+    @include size-sm-up {
+        font-size: 157%;
+    }
+    @include size-md-up {
+        font-size: 170%;
+    }
+    @include size-lg-up {
+        font-size: 185%;
+    }
+    @include size-xl-only {
+        font-size: 200%;
+    }
+}
+
+@mixin font-size-xl {
+    font-size: 150%;
+    line-height: 105%;
+    @include size-md-up {
+        font-size: 215%;
+    }
+}
+
+@mixin font-size-xxl    {
+    font-size: 140%;
+    line-height: 140%;
+    @include size-md-up {
+        font-size: 190%;
+    }
+}
+
+@mixin font-size-xxxl    {
+    font-size: 170%;
+    line-height: 100%;
+    @include size-sm-up {
+        font-size: 185%;
+    }
+    @include size-md-up {
+        font-size: 215%;
+    }
+    @include size-lg-up {
+        font-size: 285%;
+    }
+    @include size-xl-only {
+        font-size: 355%; 
+    }
+}
+
+
+/* =============================================
+   FONT-FAMILYS
+   ============================================= */
+
+body    {
+    @include font-size-basic;
+    @include helvetica-light;
+    letter-spacing: 1px;
+    color: $schwarz;
+    text-align: left;
+}
+
+
+
+a, a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+strong, b  {
+    @include helvetica-medium;
+}
+
+i   {
+    font-style: italic;
+}
+
+[class*='t-title'] {
+    &[class*='-black-60']  {
+
+    }
+}
+
+.t-title    {
+    @include font-size-xxl;
+    margin-bottom: 25px;
+    @include size-md-up {
+        margin-bottom: 35px;        
+    }
+}
+
+.t-title--less-space    {
+    margin-bottom: 21px;
+}
+
+.t-title--center {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.t-copy {
+    a   {
+        color: $rot;
+    }
+}
+
+.t-copy--small {
+    @include font-size-xs;
+}
+
+.t-copy--center {
+    text-align: center;
+}
+
+.t-important    {
+    color: $rot;
+    @include helvetica-medium;
+}
+
+.t-list {
+
+}
+
+a[href*="anchor-"], .t-copy a.t-link-simple, .c-accordion a[href*="anchor-"] {
+    @include helvetica-light;
+    color: inherit;
+    text-decoration: underline;
+    &::after    {
+        content: none;
+    }
+}
+
+@mixin t-link  {
+    @extend .t-important;
+    @include helvetica-medium;
+    &:after {
+        content: url('../images/link-arrow.png');
+        position: relative;
+        right: -14px;
+        width: 7px;
+        height: 11px;
+    }
+}
+
+
+
+
