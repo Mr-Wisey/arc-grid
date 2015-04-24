@@ -1560,7 +1560,17 @@ address {
 /* =============================================
    HIDE / SHOW
    ============================================= */
-[class*='show-'] {
+.show-xs-only,
+.show-sm-up,
+.show-sm-only,
+.show-sm-down,
+.show-md-up,
+.show-md-only,
+.show-md-down,
+.show-lg-up,
+.show-lg-only,
+.show-lg-down,
+.show-xl-only {
   display: none;
 }
 
@@ -2021,3 +2031,5 @@ p.markup {
   background: rgba(0, 0, 0, 0.5);
   color: white;
 }
+
+/*# sourceMappingURL=main.css.map */

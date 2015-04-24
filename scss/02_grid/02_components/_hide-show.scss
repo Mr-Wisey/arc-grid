@@ -2,7 +2,19 @@
    HIDE / SHOW
    ============================================= */
 
-[class*='show-'] {display: none;}
+.show-xs-only,
+.show-sm-up,
+.show-sm-only,
+.show-sm-down,
+.show-md-up,
+.show-md-only,
+.show-md-down,
+.show-lg-up,
+.show-lg-only,
+.show-lg-down,
+.show-xl-only {
+   display: none;
+}
 
 
 /* SIZE XS */
