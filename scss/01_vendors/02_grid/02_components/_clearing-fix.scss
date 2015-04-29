@@ -1,6 +1,6 @@
-/* =============================================
-   FIXING FLOATING ISSUE, SEE http://www.bluthemes.com/blog/3/clearing-bootstrap-3-columns 
-   ============================================= */
+// =========================================================
+// FIXING FLOATING ISSUE, SEE http://www.bluthemes.com/blog/3/clearing-bootstrap-3-columns 
+// =========================================================
 
 @include size-xs-only {
 [class*='clear'][class*='-xs12'] [class*='col-']:nth-child(12n+13) {clear: left;}

@@ -1,4 +1,9 @@
 node_modules
+.DS_Store
+.tmp
 .sass-cache
+main.min.css
+scripts.min.js
+ie8.js
 *.png
 *.jpg

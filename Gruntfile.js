@@ -9,8 +9,15 @@ module.exports = function(grunt) {
     'js/plugins/*.js',
     'js/_main.js'
   ];
+  var jsFileListie8 = [
+    'js/ie8/*.js'
+  ];
 
   grunt.initConfig({
+
+
+// CSS
+    // compile sass
     sass: {                              // Task
         dev: {                            // Target
           options: {                       // Target options
@@ -25,41 +32,74 @@ module.exports = function(grunt) {
             style: 'compressed'
           },
           files: {                         // Dictionary of files
-            'css/main.min.css': 'scss/main.scss'       // 'destination': 'source'
+            'css/main.min.css': 'scss/main.scss',       // 'destination': 'source'
+            'css/main.css': 'scss/main.scss'       // 'destination': 'source'
           }
         }
     },
+    // combine all mediaqueries
     combine_mq: {
       new_filename: {
           options: {
-                  beautify: false
+            beautify: false
           },
         src: 'css/main.min.css',
-        dest: 'css/main.min.css'
+        dest: 'css/main.min.css',
+      },
+      new_filename2: {
+          options: {
+            beautify: false
+          },
+        src: 'css/main.css',
+        dest: 'css/main.css',
       }
     },
-    concat: {
+    // auto prefixes css
+    autoprefixer: {
       options: {
-        separator: ';',
+        browsers: ['last 2 versions', 'ie 9']
       },
-      dist: {
+      no_dest: {
+        src: 'css/*.css', // globbing is also possible here
+      }
+    },
+
+// JS
+    // combine js-files
+    concat: {
+      concat_basic: {
         src: [jsFileList],
         dest: 'js/scripts.js',
       },
+      concat_ie8: {
+        src: [jsFileListie8],
+        dest: 'js/ie8/ie8.js',
+      },
     },
+    // ugify js
     uglify: {
-      dist: {
+      uglify_basic: {
         files: {
-          'js/scripts.min.js': [jsFileList]
+          'js/scripts.min.js': [jsFileList],
+          'js/scripts.js': [jsFileList],
+        }
+      },
+      uglify_ie8: {
+        files: {
+          'js/ie8/ie8.js': 'js/ie8/ie8.js'
         }
       }
     },
+
+  
+// BASICS
     watch: {
       sass: {
         files: [
           'scss/*.scss',
           'scss/**/*.scss',
-          'scss/**/**/*.scss'
+          'scss/**/**/*.scss',
+          'scss/**/**/**/*.scss'
         ],
         tasks: ['sass:dev']
       },
@@ -69,20 +109,28 @@ module.exports = function(grunt) {
         ],
         tasks: ['concat']
       }
+    },
+    jshint: {
+      all: ['js/_main.js']
     }
   });
 
-  // Register tasks
+
+// Register tasks
   grunt.registerTask('default', [
     'dev'
   ]);
   grunt.registerTask('dev', [
     'sass:dev',
-    'concat'
+    'concat_basic'
   ]);
   grunt.registerTask('build', [
     'sass:build',
     'combine_mq',
-    'uglify'
+    'autoprefixer',
+    'concat:concat_basic',
+    'concat:concat_ie8',
+    'uglify:uglify_basic',
+    'uglify:uglify_ie8'
   ]);
 };

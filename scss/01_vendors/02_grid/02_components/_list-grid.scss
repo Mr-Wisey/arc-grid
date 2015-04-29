@@ -1,6 +1,6 @@
-/* =============================================
-   BASICS
-   ============================================= */
+// =============================================
+// BASICS
+// =============================================
 
 // RESET YOUR BASIC FONT-SIZE -> IS SET TO 0 TO AVOID WHITESPACE BETWEEN INLINE BLOCK ELEMENTS 
 $reset-font-size: 16px;
@@ -85,7 +85,7 @@ $list-gutter-width-xl: $list-elements-xl-gutter / 2;
 }
 
 
-/* -- MEDIA QUERIES DEFINING RESPONSIVE LAYOUTS -- */
+// MEDIA QUERIES DEFINING RESPONSIVE LAYOUTS
 
 @include size-xs-only {
     .list-block {

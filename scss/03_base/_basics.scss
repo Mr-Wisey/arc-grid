@@ -1,6 +1,38 @@
+html, body	{
+	widht: 100%;
+	height: 100%;
+}
+
+// Hide invisible elements
+.invisible, .element-invisible {
+	width:0;
+	height:0;
+	left:-1000px;
+	top:-1000px;
+	position:absolute;
+	overflow:hidden;
+	display:inline;
+}
 
 
-// DISABLE HOVER ON TOUCH DEVICES WITH MODERNIZR DETECTION
-html.touch .js-hover:hover {
-    pointer-events: none !important;
+// Default navigation style
+nav ul  {
+	list-style-type: none;
+	li  {
+		display: inline-block;
+	}
+}
+
+
+
+// Zoom out on Retina iPad beacause of better Display resolution
+
+@media only		screen and (-webkit-min-device-pixel-ratio: 2),
+				screen and (min-resolution: 192dpi),
+				screen and (min-resolution: 2dppx),
+				screen and (min-device-width : 768px),
+				screen and (max-device-width : 1280px)		{
+	body.Safari.iOS	{
+    	zoom: 0.9 !important;
+	}
 }

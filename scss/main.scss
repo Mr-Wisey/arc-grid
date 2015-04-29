@@ -1,7 +1,8 @@
 // VENDORS –> NEVER EVER MODIFY THESE FILES
 @import 
    '01_vendors/01_reset/reset_basic', // DO NOT MODIFY
-   '01_vendors/02_grid/grid-main'; // DO NOT MODIFY
+   '01_vendors/02_grid/grid-main', // DO NOT MODIFY
+   '01_vendors/03_rest/browsehappy'; 
 
 // HELPERS
 @import 
@@ -18,7 +19,7 @@
 
 // LAYOUT
    @import 
-  '04_layout/layout-tutti-grid';
+  '04_layout/layout';
 
 // COMPONENTS
 @import 

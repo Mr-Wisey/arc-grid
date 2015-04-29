@@ -1,6 +1,6 @@
-/* =============================================
-   HIDE / SHOW
-   ============================================= */
+// =============================================
+// HIDE / SHOW
+// =============================================
 
 .show-xs-only,
 .show-sm-up,
@@ -17,14 +17,14 @@
 }
 
 
-/* SIZE XS */
+// SIZE XS
 
 @include size-xs-only   {
    .show-xs-only  {display: block;}
    .hide-xs-only  {display: none;}
 }
 
-/* SIZE SM */
+// SIZE SM
 
 @include size-sm-up {
    .show-sm-up  {display: block;}
@@ -38,7 +38,7 @@
    .hide-sm-down  {display: none;}
 }
 
-/* SIZE MD */
+// SIZE MD
 
 @include size-md-up {
    .show-md-up  {display: block;}
@@ -53,7 +53,7 @@
 }
 
 
-/* SIZE LG */
+// SIZE LG
 
 @include size-lg-up {
    .show-lg-up  {display: block;}
@@ -68,7 +68,7 @@
 }
 
 
-/* SIZE XL */
+// SIZE XL
 
 @include size-xl-only {
    .show-xl-only  {display: block;}
