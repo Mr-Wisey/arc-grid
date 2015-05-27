@@ -137,7 +137,7 @@ module.exports = function(grunt) {
             // When parseFiles = true, this task will crawl all *.js, *.css, *.scss and *.sass files,
             // except files that are in node_modules/.
             // You can override this by defining a "files" array below.
-               "files" : {y
+               "files" : {
                     "src": [
                         'js/scripts.js', 
                         'css/main.css'
