@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     'js/_main.js'
   ];
   var jsFileListie8 = [
-    'js/ie8/*.js'
+    'js/ie8/plugins/*.js'
   ];
 
   grunt.initConfig({
